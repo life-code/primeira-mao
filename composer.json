@@ -1,0 +1,35 @@
+{
+    "name": "life-code/primeira-mao",
+    "description": "Primeira Mão API for PHP",
+    "keywords": ["api", "primeira-mao", "library", "php"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vinicius Pugliesi",
+            "email": "vinicius_pugliesi@outlook.com"
+        }
+    ],
+    "require": {
+        "php": ">7.0",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.2"
+    },
+    "autoload": {
+        "files": [
+            "src/Support/helpers.php"
+        ],
+        "psr-4": {
+            "PrimeiraMao\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PrimeiraMao\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
