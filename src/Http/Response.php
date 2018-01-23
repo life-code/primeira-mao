@@ -45,7 +45,7 @@ abstract class Response implements ResponseContract
     /**
      * @var string
      */
-    private $transation;
+    private $transation = '';
     
     /**
      * Make new instance of this class
