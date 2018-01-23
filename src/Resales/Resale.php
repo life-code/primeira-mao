@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimeiraMao\Resale;
+namespace PrimeiraMao\Resales;
 
 /**
  * PrimeiraMao API
