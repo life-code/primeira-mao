@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimeiraMao\Profile;
+namespace PrimeiraMao\Profiles;
 
 /**
  * PrimeiraMao API
