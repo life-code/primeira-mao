@@ -30,7 +30,7 @@ class Environment implements EnvironmentContract
     /**
      * @var string
      */
-    private $api_url = 'http://api.primeiramao.com.br/';
+    private $api_url = 'http://api.primeiramao.com.br/v2/';
     
     /**
      * Make new instance of this class
