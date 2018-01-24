@@ -74,7 +74,7 @@ class EnvironmentTest extends TestCase
      */
     public function testGetUrl()
     {
-        $this->assertEquals('http://api.primeiramao.com.br/', $this->instance()->getUrl());
+        $this->assertEquals('http://api.primeiramao.com.br/v2/', $this->instance()->getUrl());
     }
     
     /**
