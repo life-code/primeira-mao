@@ -3,7 +3,7 @@
 namespace PrimeiraMao;
 
 /**
- * PrimeiraMao API
+ * Primeira Mao API
  * 
  * @type        library
  * @version     0.0.1
@@ -15,7 +15,7 @@ namespace PrimeiraMao;
 class PrimeiraMao
 {
     /**
-     * The Primeira Mão version.
+     * The PrimeiraMao API version.
      *
      * @var string
      */

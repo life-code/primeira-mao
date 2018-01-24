@@ -15,7 +15,7 @@ namespace PrimeiraMao;
 class PrimeiraMao
 {
     /**
-     * The Primeira Mão version.
+     * The PrimeiraMao API version.
      *
      * @var string
      */
