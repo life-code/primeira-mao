@@ -2,6 +2,8 @@
 
 namespace PrimeiraMao\Profiles;
 
+use Datetime;
+
 /**
  * PrimeiraMao API
  * 
@@ -14,5 +16,38 @@ namespace PrimeiraMao\Profiles;
  */
 class Profile
 {
+    /**
+     * @var string
+     */
+    public $href;
     
+    /**
+     * @var id
+     */
+    public $id;
+    
+    /**
+     * @var string
+     */
+    public $name;
+    
+    /**
+     * @var string
+     */
+    public $nick_name;
+    
+    /**
+     * @var int
+     */
+    public $migrate_id;
+    
+    /**
+     * @var \Datetime
+     */
+    public $created_at;
+    
+    /**
+     * @var \Datetime
+     */
+    public $updated_at;
 }
