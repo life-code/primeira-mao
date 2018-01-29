@@ -72,4 +72,15 @@ class User
         
         return $this;
     }
+    
+    /**
+     * Proxy accessing an attributes.
+     * 
+     * @param mixed $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        return $this->$key;
+    }
 }
