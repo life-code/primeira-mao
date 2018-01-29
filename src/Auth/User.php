@@ -33,7 +33,7 @@ class User
      */
     public function __construct(string $email = '', string $password = '')
     {
-        $this->setEmail($email);
-        $this->setPassword($password);
+        ($email)    ? $this->setEmail($email)       : null;
+        ($password) ? $this->setPassword($password) : null;
     }
 }
