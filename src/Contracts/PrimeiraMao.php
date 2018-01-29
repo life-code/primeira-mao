@@ -1,6 +1,6 @@
 <?php
 
-namespace PrimeiraMao;
+namespace PrimeiraMao\Contracts;
 
 /**
  * PrimeiraMao SDK
@@ -12,22 +12,12 @@ namespace PrimeiraMao;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class PrimeiraMao
+interface PrimeiraMao
 {
-    /**
-     * The PrimeiraMao API version.
-     *
-     * @var string
-     */
-    const VERSION = '0.0.1';
-    
     /**
      * Get the version number of the application.
      *
      * @return string
      */
-    public static function version()
-    {
-        return self::VERSION;
-    }
+    public static function version();
 }
