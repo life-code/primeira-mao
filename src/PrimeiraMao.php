@@ -4,6 +4,7 @@ namespace PrimeiraMao;
 
 use PrimeiraMao\Contracts\PrimeiraMao as PrimeiraMaoContract;
 use PrimeiraMao\Credentials\Environment;
+use PrimeiraMao\Credentials\AccountCredentials;
 
 /**
  * Primeira Mao API
@@ -30,6 +31,11 @@ class PrimeiraMao implements PrimeiraMaoContract
     private static $env;
     
     /**
+     * @var \PrimeiraMao\Contracts\Credentials\AccountCredentials
+     */
+    private static $credentials;
+    
+    /**
      * Get the version number of the application.
      *
      * @return string
@@ -51,5 +57,20 @@ class PrimeiraMao implements PrimeiraMaoContract
         }
         
         return self::$env;
+    }
+    
+    /**
+     * Get credentials
+     * 
+     * return \PrimeiraMao\Contracts\Credentials\AccountCredentials
+     */
+    public static function getCredentials()
+    {
+        if (!self::$credentials) {
+            $env = self::getEnv();
+            self::$credentials = new AccountCredentials($env->getAccessKey(), $env->getAccessSecret());
+        }
+        
+        return self::$credentials;
     }
 }
