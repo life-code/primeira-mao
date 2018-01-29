@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PrimeiraMao\PrimeiraMao;
+use PrimeiraMao\Contracts\PrimeiraMao as PrimeiraMaoContract;
 
 /**
  * PrimeiraMao API
@@ -16,6 +17,26 @@ use PrimeiraMao\PrimeiraMao;
  */
 class PrimeiraMaoTest extends TestCase
 {
+    /**
+     * PrimeiraMao Instance
+     * 
+     * @return \PrimeiraMao\Contracts\Auth\PrimeiraMao
+     */
+    public static function instance()
+    {
+        return new PrimeiraMao();
+    }
+    
+    /**
+     * Test instance account credentials
+     *
+     * @return void
+     */
+    public function testInstance()
+    {
+        $this->assertInstanceOf(PrimeiraMao::class, $this->instance());
+    }
+    
     /**
      * Test version
      *
