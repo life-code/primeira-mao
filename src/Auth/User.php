@@ -2,6 +2,7 @@
 
 namespace PrimeiraMao\Auth;
 
+use PrimeiraMao\Contracts\Auth\User as UserContract;
 use PrimeiraMao\Exceptions\PrimeiraMaoException;
 use PrimeiraMao\Support\Validator;
 
@@ -15,7 +16,7 @@ use PrimeiraMao\Support\Validator;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class User
+class User implements UserContract
 {
     use Validator;
     
