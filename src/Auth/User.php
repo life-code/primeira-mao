@@ -2,6 +2,9 @@
 
 namespace PrimeiraMao\Auth;
 
+use PrimeiraMao\Exceptions\PrimeiraMaoException;
+use PrimeiraMao\Support\Validator;
+
 /**
  * PrimeiraMao API
  * 
@@ -14,6 +17,8 @@ namespace PrimeiraMao\Auth;
  */
 class User
 {
+    use Validator;
+    
     /**
      * @var int
      */
@@ -35,5 +40,23 @@ class User
     {
         ($email)    ? $this->setEmail($email)       : null;
         ($password) ? $this->setPassword($password) : null;
+    }
+    
+    /**
+     * Set email
+     * 
+     * @param string $email
+     * @throws \PrimeiraMao\Exceptions\PrimeiraMaoException
+     * @return $this
+     */
+    public function setEmail(string $email)
+    {
+        if (! $this->validateEmail($email)) {
+            throw new PrimeiraMaoException($email, 2041);
+        }
+        
+        $this->email = $email;
+        
+        return $this;
     }
 }
