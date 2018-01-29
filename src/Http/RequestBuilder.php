@@ -3,6 +3,8 @@
 namespace PrimeiraMao\Http;
 
 use PrimeiraMao\Contracts\Http\RequestBuilder as RequestBuilderContract;
+use PrimeiraMao\Http\Response;
+use PrimeiraMao\PrimeiraMao;
 
 /**
  * PrimeiraMao API
@@ -43,5 +45,30 @@ abstract class RequestBuilder implements RequestBuilderContract
         curl_close($curl);
         
         return $this->createResponse($data, $info);
+    }
+    
+    /**
+     * Create response
+     * 
+     * @param mixed $data
+     * @param array $info
+     * @return \PrimeiraMao\Contracts\Http\Response
+     */
+    public function createResponse($data, array $info)
+    {
+        $response = new Response(PrimeiraMao::getEnv(), $this->path);
+        
+        $response->setStatus($info['http_code']);
+        $response->setInfo($info);
+        
+        if ($data === 'Unauthorized') {
+            return $response->setErrors([401 => $data]);
+        }
+        
+        if ($info['http_code'] === 404) {
+            return $response->setErrors([404 => 'Not Found']);
+        }
+        
+        return $response->setData($data);
     }
 }
