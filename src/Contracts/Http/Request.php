@@ -15,20 +15,6 @@ namespace PrimeiraMao\Contracts\Http;
 interface Request
 {
     /**
-     * Get request data
-     * 
-     * @return mixed
-     */
-    public function getData();
-    
-    /**
-     * Get request headers
-     * 
-     * @return array
-     */
-    public function getHeaders() : array;
-    
-    /**
      * Get request method
      * 
      * @return string
@@ -36,25 +22,39 @@ interface Request
     public function getMethod() : string;
     
     /**
-     * Get request URL
+     * Get headers
+     * 
+     * @return array
+     */
+    public function getHeaders() : array;
+    
+    /**
+     * Set appends
+     * 
+     * @param array $data
+     * @return $this
+     */
+    public function appends(array $appends);
+    
+    /**
+     * Get URL
      * 
      * @return string
      */
     public function getUrl() : string;
     
     /**
-     * Get response class
+     * Set request data
      * 
-     * @return \PrimeiraMao\Contracts\Http\Response
+     * @param array $data
+     * @return $this
      */
-    public function getResponseClass();
+    public function setData(array $data);
     
     /**
-     * Create response
+     * Get request data
      * 
-     * @param mixed $data
-     * @param array $info
-     * @return \PrimeiraMao\Contracts\Http\Response
+     * @return json
      */
-    public function createResponse($data, array $info);
+    public function getData();
 }
