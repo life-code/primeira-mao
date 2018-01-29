@@ -4,6 +4,7 @@ namespace PrimeiraMao\Http;
 
 use PrimeiraMao\Contracts\Http\Request as RequestContract;
 use PrimeiraMao\Http\RequestBuilder;
+use PrimeiraMao\PrimeiraMao;
 
 /**
  * PrimeiraMao API
@@ -60,12 +61,12 @@ class Request extends RequestBuilder implements RequestContract
     /**
      * @var string
      */
-    private $path;
+    protected $path;
     
     /**
      * @var array
      */
-    private $appends;
+    private $appends = [];
     
     /**
      * @var array
@@ -86,16 +87,57 @@ class Request extends RequestBuilder implements RequestContract
     }
     
     /**
+     * Get request method
+     * 
+     * @return string
+     */
+    public function getMethod() : string
+    {
+        return $this->method;
+    }
+    
+    /**
+     * Get headers
+     * 
+     * @return array
+     */
+    public function getHeaders() : array
+    {
+        $credentials = PrimeiraMao::getCredentials();
+        
+        return [
+            'Authorization: Basic ' . $credentials->encript(),
+        ];
+    }
+    
+    /**
      * Set appends
      * 
      * @param array $data
      * @return $this
      */
-    public function setAppends(array $appends)
+    public function appends(array $appends)
     {
         $this->appends = $appends;
         
         return $this;
+    }
+    
+    /**
+     * Get URL
+     * 
+     * @return string
+     */
+    public function getUrl() : string
+    {
+        $path    = PrimeiraMao::getEnv()->getUrl() . $this->path;
+        $appends = '?';
+        
+        foreach ($this->appends as $key => $value) {
+            $appends .= $key . '=' . $value;
+        }
+        
+        return ($appends === '?') ? $path : $path . $appends;
     }
     
     /**
