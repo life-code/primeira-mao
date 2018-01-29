@@ -59,4 +59,17 @@ class User
         
         return $this;
     }
+    
+    /**
+     * Set password
+     * 
+     * @param string $password
+     * @return $this
+     */
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+        
+        return $this;
+    }
 }
