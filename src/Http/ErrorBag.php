@@ -7,7 +7,7 @@ use PrimeiraMao\Contracts\Credentials\Environment;
 use PrimeiraMao\Languages\Language;
 
 /**
- * PrimeiraMao SDK
+ * PrimeiraMao API
  * 
  * @type        library
  * @version     0.0.1

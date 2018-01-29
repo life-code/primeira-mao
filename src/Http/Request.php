@@ -3,12 +3,10 @@
 namespace PrimeiraMao\Http;
 
 use PrimeiraMao\Contracts\Http\Request as RequestContract;
-use PrimeiraMao\Contracts\Credentials\AccountCredentials;
-use PrimeiraMao\Contracts\Credentials\Environment;
 use PrimeiraMao\Http\RequestBuilder;
 
 /**
- * PrimeiraMao SDK
+ * PrimeiraMao API
  * 
  * @type        library
  * @version     0.0.1
@@ -17,7 +15,7 @@ use PrimeiraMao\Http\RequestBuilder;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-abstract class Request extends RequestBuilder implements RequestContract
+class Request extends RequestBuilder implements RequestContract
 {
     /**
      * @var strint
@@ -42,6 +40,11 @@ abstract class Request extends RequestBuilder implements RequestContract
     /**
      * @var strint
      */
+    const PATCH = 'PATCH';
+    
+    /**
+     * @var strint
+     */
     const JSON = 'application/json';
     
     /**
@@ -50,65 +53,71 @@ abstract class Request extends RequestBuilder implements RequestContract
     const XML = 'application/xml';
     
     /**
-     * @var \PrimeiraMao\Contracts\AccountCredentials
+     * @var string
      */
-    protected $credentials;
+    private $method;
     
     /**
-     * @var \PrimeiraMao\Contracts\Credentials\Environment
+     * @var string
      */
-    protected $env;
+    private $path;
     
     /**
      * @var array
      */
-    protected $data = [];
+    private $appends;
+    
+    /**
+     * @var array
+     */
+    private $data = [];
     
     /**
      * Make new instance of this class
      * 
-     * @param \PrimeiraMao\Contracts\AccountCredentials $credentials
-     * @param \PrimeiraMao\Contracts\Credentials\Environment $env
+     * @param string $method
+     * @param string $path
      * @return void
      */
-    public function __construct(AccountCredentials $credentials, Environment $env)
+    public function __construct(string $method, string $path)
     {
-        $this->credentials = $credentials;
-        $this->env         = $env;
+        $this->method = $method;
+        $this->path   = $path;
+    }
+    
+    /**
+     * Set appends
+     * 
+     * @param array $data
+     * @return $this
+     */
+    public function setAppends(array $appends)
+    {
+        $this->appends = $appends;
+        
+        return $this;
+    }
+    
+    /**
+     * Set request data
+     * 
+     * @param array $data
+     * @return $this
+     */
+    public function setData(array $data)
+    {
+        $this->data = json_encode($data);
+        
+        return $this;
     }
     
     /**
      * Get request data
      * 
-     * @return mixed
+     * @return json
      */
     public function getData()
     {
         return $this->data;
-    }
-    
-    /**
-     * Create response
-     * 
-     * @param mixed $data
-     * @param array $info
-     * @return \PrimeiraMao\Contracts\Http\Response
-     */
-    public function createResponse($data, array $info)
-    {
-        $response = $this->getResponseClass();
-        
-        $response->setStatus($info['http_code']);
-        $response->setInfo($info);
-        
-        if ($data === 'Unauthorized') {
-            return $response->setErrors([401 => $data]);
-        }
-        
-        if ($info['http_code'] === 404) {
-            return $response->setErrors([404 => 'Not Found']);
-        }
-        
-        return $response->setData($data);
     }
 }

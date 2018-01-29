@@ -6,7 +6,7 @@ use PrimeiraMao\Contracts\Http\Response as ResponseContract;
 use PrimeiraMao\Contracts\Credentials\Environment;
 
 /**
- * PrimeiraMao SDK
+ * PrimeiraMao API
  * 
  * @type        library
  * @version     0.0.1
@@ -15,7 +15,7 @@ use PrimeiraMao\Contracts\Credentials\Environment;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-abstract class Response implements ResponseContract
+class Response implements ResponseContract
 {
     /**
      * @var int

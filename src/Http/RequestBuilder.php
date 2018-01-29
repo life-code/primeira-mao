@@ -5,7 +5,7 @@ namespace PrimeiraMao\Http;
 use PrimeiraMao\Contracts\Http\RequestBuilder as RequestBuilderContract;
 
 /**
- * PrimeiraMao SDK
+ * PrimeiraMao API
  * 
  * @type        library
  * @version     0.0.1
