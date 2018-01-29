@@ -23,4 +23,17 @@ class User
      * @var string
      */
     private $password;
+    
+    /**
+     * Make new instance of User
+     * 
+     * @param string $user
+     * @param string $password
+     * @return void
+     */
+    public function __construct(string $email = '', string $password = '')
+    {
+        $this->setEmail($email);
+        $this->setPassword($password);
+    }
 }
