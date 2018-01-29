@@ -81,6 +81,23 @@ class Response implements ResponseContract
         
         return $this;
     }
+    /**
+     * Set data
+     * 
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $data = json_decode($data);
+        
+        if (isset($data->error) && $data->error) {
+            return $this->setErrors((array) $data->errors);
+        }
+        
+        $this->data = $data;
+        
+        return $this;
+    }
     
     /**
      * Get all data
