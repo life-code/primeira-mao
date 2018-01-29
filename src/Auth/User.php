@@ -17,10 +17,10 @@ class User
     /**
      * @var int
      */
-    public $email;
+    private $email;
     
     /**
      * @var string
      */
-    public $password;
+    private $password;
 }
