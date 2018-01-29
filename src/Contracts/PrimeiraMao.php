@@ -3,7 +3,7 @@
 namespace PrimeiraMao\Contracts;
 
 /**
- * PrimeiraMao SDK
+ * PrimeiraMao API
  * 
  * @type        library
  * @version     0.0.1
