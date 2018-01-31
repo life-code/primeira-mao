@@ -39,6 +39,11 @@ abstract class RequestBuilder implements RequestBuilderContract
             curl_setopt($curl, CURLOPT_POSTFIELDS, $this->getData());
         }
         
+        if ($this->getFileData()) {
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $this->getFileData());
+        }
+        
         $data = curl_exec($curl);
         $info = curl_getinfo($curl);
         
