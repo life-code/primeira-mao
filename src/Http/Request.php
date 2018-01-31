@@ -5,6 +5,7 @@ namespace PrimeiraMao\Http;
 use PrimeiraMao\Contracts\Http\Request as RequestContract;
 use PrimeiraMao\Http\RequestBuilder;
 use PrimeiraMao\PrimeiraMao;
+use CurlFile;
 
 /**
  * PrimeiraMao API
@@ -72,6 +73,11 @@ class Request extends RequestBuilder implements RequestContract
      * @var array
      */
     private $data = [];
+    
+    /**
+     * @var array
+     */
+    private $filedata = [];
     
     /**
      * @var string
@@ -167,5 +173,30 @@ class Request extends RequestBuilder implements RequestContract
     public function getData()
     {
         return $this->data;
+    }
+    
+    /**
+     * Set request file
+     * 
+     * @param array $filedata
+     * @return $this
+     */
+    public function setFileData(array $filedata)
+    {
+        $this->filedata = [
+            'Filedata' => new CurlFile($filedata['tmp_name'], $filedata['type'], $filedata['name']),
+        ];
+        
+        return $this;
+    }
+    
+    /**
+     * Get request file
+     * 
+     * @return array
+     */
+    public function getFileData() : array
+    {
+        return $this->filedata;
     }
 }
