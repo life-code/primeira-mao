@@ -19,13 +19,10 @@ interface Repository
     /**
      * Get all registers with paginate
      * 
-     * @param int $migrate_id
-     * @param int $page
-     * @param int $limit
-     * @param bool $status
+     * @param array $appends
      * @return \PrimeiraMao\Contracts\Http\Response
      */
-    public function all(int $migrate_id = 0, int $page = 0, int $limit = 10, bool $status = true) : Response;
+    public function all(array $appends = []) : Response;
     
     /**
      * Find one register
@@ -56,7 +53,7 @@ interface Repository
      * Delete one register
      * 
      * @param int $id
-     * @return bool
+     * @return \PrimeiraMao\Contracts\Http\Response
      */
-    public function delete(int $id) : bool;
+    public function delete(int $id) : Response;
 }
