@@ -64,9 +64,7 @@ class ProfileTest extends TestCase
      */
     public function testCreate()
     {
-        $data = [];
-        
-        $this->assertInstanceOf(Response::class, $this->instance()->create($data));
+        $this->assertInstanceOf(Response::class, $this->instance()->create([]));
     }
     
     /**
@@ -76,10 +74,7 @@ class ProfileTest extends TestCase
      */
     public function testUpdate()
     {
-        $id   = 1;
-        $data = [];
-        
-        $this->assertInstanceOf(Response::class, $this->instance()->update($id, $data));
+        $this->assertInstanceOf(Response::class, $this->instance()->update(1, []));
     }
     
     /**
@@ -89,6 +84,6 @@ class ProfileTest extends TestCase
      */
     public function testDelete()
     {
-        $this->assertInstanceOf(Response::class, $this->instance()->delete(1313543213246543));
+        $this->assertInstanceOf(Response::class, $this->instance()->delete(1));
     }
 }
