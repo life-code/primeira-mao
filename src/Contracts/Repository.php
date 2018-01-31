@@ -17,6 +17,17 @@ use PrimeiraMao\Contracts\Http\Response;
 interface Repository
 {
     /**
+     * Get all registers with paginate
+     * 
+     * @param int $migrate_id
+     * @param int $page
+     * @param int $limit
+     * @param bool $status
+     * @return \PrimeiraMao\Contracts\Http\Response
+     */
+    public function all(int $migrate_id = 0, int $page = 0, int $limit = 10, bool $status = true) : Response;
+    
+    /**
      * Find one register
      * 
      * @param int $id
@@ -25,12 +36,12 @@ interface Repository
     public function find(int $id) : Response;
     
     /**
-     * Delete one register
+     * Create one register
      * 
-     * @param int $id
-     * @return bool
+     * @param array $data
+     * @return \PrimeiraMao\Contracts\Http\Response
      */
-    public function delete(int $id) : bool;
+    public function create(array $data) : Response;
     
     /**
      * Update one register
@@ -42,13 +53,10 @@ interface Repository
     public function update(int $id, array $data) : Response;
     
     /**
-     * Get all registers with paginate
+     * Delete one register
      * 
-     * @param int $migrate_id
-     * @param int $page
-     * @param int $limit
-     * @param bool $status
-     * @return \PrimeiraMao\Contracts\Http\Response
+     * @param int $id
+     * @return bool
      */
-    public function all(int $migrate_id = 0, int $page = 0, int $limit = 10, bool $status = true) : Response;
+    public function delete(int $id) : bool;
 }
