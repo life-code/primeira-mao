@@ -25,11 +25,11 @@ interface Language
     /**
      * Translate error value
      * 
-     * @param int $code
+     * @param string $code
      * @param string $default
      * @return string
      */
-    public function translate(int $code, string $default = '') : string;
+    public function translate(string $code, string $default = '') : string;
     
     /**
      * Get translations
