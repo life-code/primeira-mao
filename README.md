@@ -3,6 +3,14 @@
    <h2  align="center">The integration API with Primeira Mão!</h2>
 </p>
 
+<p align="center">
+   <a href="https://packagist.org/packages/life-code/primeira-mao"><img src="https://poser.pugx.org/life-code/primeira-mao/d/total.svg" alt="Total Downloads"></a>
+   <a href="https://packagist.org/packages/life-code/primeira-mao"><img src="https://poser.pugx.org/life-code/primeira-mao/v/stable.svg" alt="Latest Stable Version"></a>
+   <a href="https://codeclimate.com/github/life-code/primeira-mao/maintainability"><img src="https://api.codeclimate.com/v1/badges/b889d75e5aa75226ffbb/maintainability" /></a>
+   <a href="http://isitmaintained.com/project/life-code/primeira-mao"><img src="http://isitmaintained.com/badge/resolution/life-code/primeira-mao.svg" /></a>
+   <a href="https://packagist.org/packages/life-code/primeira-mao"><img src="https://poser.pugx.org/life-code/primeira-mao/license.svg" alt="License"></a>
+</p>
+
 ## About Primeira Mão
 The Primeira Mão library contains several features that Primeira Mão offers in the form of APIs. With it you can integrate features like:
 
