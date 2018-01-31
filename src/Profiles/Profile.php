@@ -26,17 +26,14 @@ class Profile implements Repository
     /**
      * Get all registers with paginate
      * 
-     * @param int $migrate_id
-     * @param int $page
-     * @param int $limit
-     * @param bool $status
+     * @param array $appends
      * @return \PrimeiraMao\Contracts\Http\Response
      */
-    public function all(int $migrate_id = 0, int $page = 0, int $limit = 10, bool $status = true) : Response
+    public function all(array $appends = []) : Response
     {
-        $appends = ['migrate_id' => $migrate_id, 'page' => $page, 'limit' => $limit, 'status' => $status];
+        $url = $this->url . '.json';
         
-        $request = new Request(Request::GET, $this->url . '.json');
+        $request = new Request(Request::GET, $url, $this->url);
         
         return $request->appends($appends)->send();
     }
@@ -49,7 +46,9 @@ class Profile implements Repository
      */
     public function find(int $id) : Response
     {
-        $request = new Request(Request::GET, $this->url . '/' . $id . '.json');
+        $url = $this->url . '/' . $id . '.json';
+        
+        $request = new Request(Request::GET, $url, $this->url);
         
         return $request->send();
     }
@@ -62,7 +61,9 @@ class Profile implements Repository
      */
     public function create(array $data) : Response
     {
-        $request = new Request(Request::POST, $this->url . '.json');
+        $url = $this->url . '.json';
+        
+        $request = new Request(Request::POST, $url, $this->url);
         
         return $request->setData($data)->send();
     }
@@ -76,7 +77,9 @@ class Profile implements Repository
      */
     public function update(int $id, array $data) : Response
     {
-        $request = new Request(Request::PATCH, $this->url . '/' . $id . '.json');
+        $url = $this->url . '/' . $id . '.json';
+        
+        $request = new Request(Request::PATCH, $url, $this->url);
         
         return $request->setData($data)->send();
     }
@@ -85,11 +88,13 @@ class Profile implements Repository
      * Delete one register
      * 
      * @param int $id
-     * @return bool
+     * @return \PrimeiraMao\Contracts\Http\Response
      */
-    public function delete(int $id) : bool
+    public function delete(int $id) : Response
     {
-        $request = new Request(Request::DELETE, $this->url . '/' . $id . '.json');
+        $url = $this->url . '/' . $id . '.json';
+        
+        $request = new Request(Request::DELETE, $url, $this->url);
         
         return $request->send();
     }
