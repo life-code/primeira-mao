@@ -119,6 +119,7 @@ class Request extends RequestBuilder implements RequestContract
         
         return [
             'Authorization: Basic ' . $credentials->encript(),
+            'Content-Type: ' . self::JSON,
         ];
     }
     
