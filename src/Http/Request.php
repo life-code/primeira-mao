@@ -61,7 +61,7 @@ class Request extends RequestBuilder implements RequestContract
     /**
      * @var string
      */
-    protected $path;
+    private $url;
     
     /**
      * @var array
@@ -74,15 +74,21 @@ class Request extends RequestBuilder implements RequestContract
     private $data = [];
     
     /**
+     * @var string
+     */
+    protected $path;
+    
+    /**
      * Make new instance of this class
      * 
      * @param string $method
-     * @param string $path
+     * @param string $url
      * @return void
      */
-    public function __construct(string $method, string $path)
+    public function __construct(string $method, string $url, string $path)
     {
         $this->method = $method;
+        $this->url    = $url;
         $this->path   = $path;
     }
     
@@ -130,14 +136,14 @@ class Request extends RequestBuilder implements RequestContract
      */
     public function getUrl() : string
     {
-        $path    = PrimeiraMao::getEnv()->getUrl() . $this->path;
+        $url    = PrimeiraMao::getEnv()->getUrl() . $this->url;
         $appends = '?';
         
         foreach ($this->appends as $key => $value) {
             $appends .= $key . '=' . $value;
         }
         
-        return ($appends === '?') ? $path : $path . $appends;
+        return ($appends === '?') ? $url : $url . $appends;
     }
     
     /**
