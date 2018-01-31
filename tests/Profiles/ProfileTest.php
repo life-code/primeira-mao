@@ -38,6 +38,16 @@ class ProfileTest extends TestCase
     }
     
     /**
+     * Test method all
+     *
+     * @return void
+     */
+    public function testAll()
+    {
+        $this->assertInstanceOf(Response::class, $this->instance()->all());
+    }
+    
+    /**
      * Test method find
      *
      * @return void
@@ -48,12 +58,37 @@ class ProfileTest extends TestCase
     }
     
     /**
-     * Test method all
+     * Test method create
      *
      * @return void
      */
-    public function testAll()
-    {
-        $this->assertInstanceOf(Response::class, $this->instance()->all());
-    }
+    // public function testCreate()
+    // {
+    //     $data = [];
+        
+    //     $this->assertInstanceOf(Response::class, $this->instance()->create($data));
+    // }
+    
+    /**
+     * Test method update
+     *
+     * @return void
+     */
+    // public function testUpdate()
+    // {
+    //     $id   = 194850;
+    //     $data = [];
+        
+    //     $this->assertInstanceOf(Response::class, $this->instance()->update($id, $data));
+    // }
+    
+    /**
+     * Test method delete
+     *
+     * @return void
+     */
+    // public function testDelete()
+    // {
+    //     $this->assertInstanceOf(Response::class, $this->instance()->delete(194850));
+    // }
 }
