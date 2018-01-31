@@ -62,33 +62,33 @@ class ProfileTest extends TestCase
      *
      * @return void
      */
-    // public function testCreate()
-    // {
-    //     $data = [];
+    public function testCreate()
+    {
+        $data = [];
         
-    //     $this->assertInstanceOf(Response::class, $this->instance()->create($data));
-    // }
+        $this->assertInstanceOf(Response::class, $this->instance()->create($data));
+    }
     
     /**
      * Test method update
      *
      * @return void
      */
-    // public function testUpdate()
-    // {
-    //     $id   = 194850;
-    //     $data = [];
+    public function testUpdate()
+    {
+        $id   = 1;
+        $data = [];
         
-    //     $this->assertInstanceOf(Response::class, $this->instance()->update($id, $data));
-    // }
+        $this->assertInstanceOf(Response::class, $this->instance()->update($id, $data));
+    }
     
     /**
      * Test method delete
      *
      * @return void
      */
-    // public function testDelete()
-    // {
-    //     $this->assertInstanceOf(Response::class, $this->instance()->delete(194850));
-    // }
+    public function testDelete()
+    {
+        $this->assertInstanceOf(Response::class, $this->instance()->delete(1313543213246543));
+    }
 }
