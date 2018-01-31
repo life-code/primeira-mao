@@ -56,17 +56,23 @@ abstract class RequestBuilder implements RequestBuilderContract
      */
     public function createResponse($data, array $info)
     {
+        $data = json_decode($data, true);
+        
         $response = new Response(PrimeiraMao::getEnv(), $this->path);
         
         $response->setStatus($info['http_code']);
         $response->setInfo($info);
         
-        if ($data === 'Unauthorized') {
-            return $response->setErrors([401 => $data]);
+        if ($info['http_code'] === 404) {
+            return $response->setErrors([404 => $data['message']]);
         }
         
-        if ($info['http_code'] === 404) {
-            return $response->setErrors([404 => 'Not Found']);
+        if ($info['http_code'] === 422) {
+            if (isset($data['errors'])) {
+                return $response->setErrors($data['errors']);
+            }
+            
+            return $response->setErrors([422 => $data['message']]);
         }
         
         return $response->setData($data);
