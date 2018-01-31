@@ -50,10 +50,19 @@ class ErrorBag implements ErrorBagContracts
         $exchange = [];
         
         foreach ($errors as $key => $value) {
-            $exchange[] = (object) [
-                'code'  => $key,
-                'value' => $this->language->translate($key, $value),
-            ];
+            if (! is_array($value)) {
+                $exchange[] = (object) [
+                    'code'  => $key,
+                    'value' => $this->language->translate($key, $value),
+                ];
+            } else {
+                foreach ($value as $k => $v) {
+                    $exchange[] = (object) [
+                        'code'  => $key,
+                        'value' => $this->language->translate($key, $v),
+                    ];
+                }
+            }
         }
         
         $this->data = $exchange;
