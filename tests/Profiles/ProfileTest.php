@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 
 use PrimeiraMao\Profiles\Profile;
+use PrimeiraMao\Contracts\Repository;
 use PrimeiraMao\Http\Response;
 
 /**
@@ -34,7 +35,7 @@ class ProfileTest extends TestCase
      */
     public function testInstance()
     {
-        $this->assertInstanceOf(Profile::class, $this->instance());
+        $this->assertInstanceOf(Repository::class, $this->instance());
     }
     
     /**
