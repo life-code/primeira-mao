@@ -5,7 +5,6 @@ namespace PrimeiraMao\Http;
 use PrimeiraMao\Contracts\Http\Request as RequestContract;
 use PrimeiraMao\Http\RequestBuilder;
 use PrimeiraMao\PrimeiraMao;
-use CurlFile;
 
 /**
  * PrimeiraMao API
@@ -53,6 +52,11 @@ class Request extends RequestBuilder implements RequestContract
      * @var strint
      */
     const XML = 'application/xml';
+    
+    /**
+     * @var strint
+     */
+    const FILE = 'multipart/form-data';
     
     /**
      * @var string
@@ -117,10 +121,15 @@ class Request extends RequestBuilder implements RequestContract
     {
         $credentials = PrimeiraMao::getCredentials();
         
-        return [
-            'Authorization: Basic ' . $credentials->encript(),
-            'Content-Type: ' . self::JSON,
-        ];
+        $headers = ['Authorization: Basic ' . $credentials->encript()];
+        
+        if ($this->getFileData()) {
+            $headers[] = 'Content-Type: ' . self::FILE;
+        } else {
+            $headers[] = 'Content-Type: ' . self::JSON;
+        }
+        
+        return $headers;
     }
     
     /**
@@ -185,7 +194,7 @@ class Request extends RequestBuilder implements RequestContract
     public function setFileData(array $filedata)
     {
         $this->filedata = [
-            'Filedata' => new CurlFile($filedata['tmp_name'], $filedata['type'], $filedata['name']),
+            'Filedata' => curl_file_create($filedata['tmp_name'], $filedata['type'], $filedata['name']),
         ];
         
         return $this;
