@@ -2,6 +2,9 @@
 
 namespace PrimeiraMao\Ads;
 
+use PrimeiraMao\Http\Request;
+use PrimeiraMao\Contracts\Http\Response;
+
 /**
  * PrimeiraMao API
  * 
@@ -14,5 +17,23 @@ namespace PrimeiraMao\Ads;
  */
 class Uploader
 {
+    /**
+     * @var string
+     */
+    private $url = 'uploader';
     
+    /**
+     * Create one register
+     * 
+     * @param array $file
+     * @return \PrimeiraMao\Contracts\Http\Response
+     */
+    public function create(array $file) : Response
+    {
+        $url = $this->url . '.json';
+        
+        $request = new Request(Request::POST, $url, $this->url);
+        
+        return $request->setFileData($file)->send();
+    }
 }
