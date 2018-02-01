@@ -4,7 +4,6 @@ namespace PrimeiraMao\Profiles;
 
 use PrimeiraMao\Http\Request;
 use PrimeiraMao\Contracts\Http\Response;
-use PrimeiraMao\Contracts\Repository;
 
 /**
  * PrimeiraMao API
@@ -16,7 +15,7 @@ use PrimeiraMao\Contracts\Repository;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class Profile implements Repository
+class Profile
 {
     /**
      * @var string

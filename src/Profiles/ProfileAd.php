@@ -4,7 +4,6 @@ namespace PrimeiraMao\Profiles;
 
 use PrimeiraMao\Http\Request;
 use PrimeiraMao\Contracts\Http\Response;
-use PrimeiraMao\Contracts\Repository;
 
 /**
  * PrimeiraMao API
@@ -16,7 +15,7 @@ use PrimeiraMao\Contracts\Repository;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class ProfileAd implements Repository
+class ProfileAd
 {
     /**
      * @var string
@@ -36,7 +35,7 @@ class ProfileAd implements Repository
      */
     public function __construct(int $profile_id)
     {
-        $this->url .= '/' . $profile_id;
+        $this->url .= '/' . $profile_id . '/ads';
     }
     
     /**
@@ -47,7 +46,7 @@ class ProfileAd implements Repository
      */
     public function all(array $appends = []) : Response
     {
-        $url = $this->url . '/ads.json';
+        $url = $this->url . '.json';
         
         $request = new Request(Request::GET, $url, $this->path);
         
@@ -62,7 +61,7 @@ class ProfileAd implements Repository
      */
     public function find(int $id) : Response
     {
-        $url = $this->url . '/ads/' . $id . '.json';
+        $url = $this->url . '/' . $id . '.json';
         
         $request = new Request(Request::GET, $url, $this->path);
         
@@ -77,7 +76,7 @@ class ProfileAd implements Repository
      */
     public function create(array $data) : Response
     {
-        $url = $this->url . '/ads.json';
+        $url = $this->url . '.json';
         
         $request = new Request(Request::POST, $url, $this->path);
         
@@ -93,7 +92,7 @@ class ProfileAd implements Repository
      */
     public function update(int $id, array $data) : Response
     {
-        $url = $this->url . '/ads/' . $id . '.json';
+        $url = $this->url . '/' . $id . '.json';
         
         $request = new Request(Request::PATCH, $url, $this->path);
         
@@ -108,7 +107,7 @@ class ProfileAd implements Repository
      */
     public function delete(int $id) : Response
     {
-        $url = $this->url . '/ads/' . $id . '.json';
+        $url = $this->url . '/' . $id . '.json';
         
         $request = new Request(Request::DELETE, $url, $this->path);
         
