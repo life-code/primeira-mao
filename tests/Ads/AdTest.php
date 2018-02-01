@@ -21,7 +21,7 @@ class AdTest extends TestCase
     /**
      * Customer Instance
      * 
-     * @return \PrimeiraMao\Ads\Ad
+     * @return \PrimeiraMao\Contracts\Repository
      */
     public static function instance()
     {
