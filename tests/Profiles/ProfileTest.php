@@ -21,7 +21,7 @@ class ProfileTest extends TestCase
     /**
      * Customer Instance
      * 
-     * @return \PrimeiraMao\Profiles\Profile
+     * @return \PrimeiraMao\Contracts\Repository
      */
     public static function instance()
     {
