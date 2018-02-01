@@ -54,7 +54,7 @@ class ResaleTest extends TestCase
      */
     public function testFind()
     {
-        $this->assertInstanceOf(Response::class, $this->instance()->find(194850));
+        $this->assertInstanceOf(Response::class, $this->instance()->find(1));
     }
     
     /**
