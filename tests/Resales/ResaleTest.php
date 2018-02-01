@@ -21,7 +21,7 @@ class ResaleTest extends TestCase
     /**
      * Customer Instance
      * 
-     * @return \PrimeiraMao\Resales\Resale
+     * @return \PrimeiraMao\Contracts\Repository
      */
     public static function instance()
     {
