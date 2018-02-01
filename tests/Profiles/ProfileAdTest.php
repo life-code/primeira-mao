@@ -3,7 +3,6 @@
 use PHPUnit\Framework\TestCase;
 
 use PrimeiraMao\Profiles\ProfileAd;
-use PrimeiraMao\Contracts\Repository;
 use PrimeiraMao\Http\Response;
 
 /**
@@ -21,7 +20,7 @@ class ProfileAdTest extends TestCase
     /**
      * Customer Instance
      * 
-     * @return \PrimeiraMao\Contracts\Repository
+     * @return \PrimeiraMao\Profiles\ProfileAd
      */
     public static function instance()
     {
@@ -35,7 +34,7 @@ class ProfileAdTest extends TestCase
      */
     public function testInstance()
     {
-        $this->assertInstanceOf(Repository::class, $this->instance());
+        $this->assertInstanceOf(ProfileAd::class, $this->instance());
     }
     
     /**
