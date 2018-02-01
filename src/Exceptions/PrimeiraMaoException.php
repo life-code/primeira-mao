@@ -24,7 +24,7 @@ class PrimeiraMaoException extends Exception
      * 
      * @var string
      */
-    private $path = 'Throws';
+    private $path = 'throws';
     
     /**
      * @var \PrimeiraMao\Languages\Language
