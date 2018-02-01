@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-use PrimeiraMao\Profiles\ProfileAds;
+use PrimeiraMao\Profiles\ProfileAd;
 use PrimeiraMao\Contracts\Repository;
 use PrimeiraMao\Http\Response;
 
@@ -16,7 +16,7 @@ use PrimeiraMao\Http\Response;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class ProfileAdsTest extends TestCase
+class ProfileAdTest extends TestCase
 {
     /**
      * Customer Instance
@@ -25,7 +25,7 @@ class ProfileAdsTest extends TestCase
      */
     public static function instance()
     {
-        return new ProfileAds(1);
+        return new ProfileAd(1);
     }
     
     /**
