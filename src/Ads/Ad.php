@@ -21,6 +21,11 @@ class Ad implements Repository
     /**
      * @var string
      */
+    private $path = 'ads';
+    
+    /**
+     * @var string
+     */
     private $url = 'ads';
     
     /**
@@ -33,7 +38,7 @@ class Ad implements Repository
     {
         $url = $this->url . '.json';
         
-        $request = new Request(Request::GET, $url, $this->url);
+        $request = new Request(Request::GET, $url, $this->path);
         
         return $request->appends($appends)->send();
     }
@@ -48,7 +53,7 @@ class Ad implements Repository
     {
         $url = $this->url . '/' . $id . '.json';
         
-        $request = new Request(Request::GET, $url, $this->url);
+        $request = new Request(Request::GET, $url, $this->path);
         
         return $request->send();
     }
@@ -63,7 +68,7 @@ class Ad implements Repository
     {
         $url = $this->url . '.json';
         
-        $request = new Request(Request::POST, $url, $this->url);
+        $request = new Request(Request::POST, $url, $this->path);
         
         return $request->setData($data)->send();
     }
@@ -79,7 +84,7 @@ class Ad implements Repository
     {
         $url = $this->url . '/' . $id . '.json';
         
-        $request = new Request(Request::PATCH, $url, $this->url);
+        $request = new Request(Request::PATCH, $url, $this->path);
         
         return $request->setData($data)->send();
     }
@@ -94,7 +99,7 @@ class Ad implements Repository
     {
         $url = $this->url . '/' . $id . '.json';
         
-        $request = new Request(Request::DELETE, $url, $this->url);
+        $request = new Request(Request::DELETE, $url, $this->path);
         
         return $request->send();
     }
