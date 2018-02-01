@@ -20,6 +20,11 @@ class Uploader
     /**
      * @var string
      */
+    private $path = 'uploader';
+    
+    /**
+     * @var string
+     */
     private $url = 'uploader';
     
     /**
@@ -32,7 +37,7 @@ class Uploader
     {
         $url = $this->url . '.json';
         
-        $request = new Request(Request::POST, $url, $this->url);
+        $request = new Request(Request::POST, $url, $this->path);
         
         return $request->setFileData($file)->send();
     }
