@@ -16,7 +16,7 @@ use PrimeiraMao\Contracts\Repository;
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
  * @license     MIT
  */
-class ProfileAds implements Repository
+class ProfileAd implements Repository
 {
     /**
      * @var string
@@ -29,7 +29,7 @@ class ProfileAds implements Repository
     private $url  = 'profiles';
     
     /**
-     * Instance of ProfileAds class
+     * Instance of ProfileAd class
      * 
      * @param int $profile_id
      * @return void
