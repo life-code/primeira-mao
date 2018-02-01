@@ -44,16 +44,6 @@ class Environment implements EnvironmentContract
     }
     
     /**
-     * Get environment
-     * 
-     * @return string
-     */
-    public function getEnv() : string
-    {
-        return strtoupper(env('PRIMEIRA_MAO_ENV', 'PRODUCTION'));
-    }
-    
-    /**
      * Get access key
      * 
      * @return string
