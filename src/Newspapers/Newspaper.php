@@ -2,6 +2,9 @@
 
 namespace PrimeiraMao\Newspapers;
 
+use PrimeiraMao\Http\Request;
+use PrimeiraMao\Contracts\Http\Response;
+
 /**
  * PrimeiraMao API
  * 
