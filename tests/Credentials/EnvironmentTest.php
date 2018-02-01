@@ -9,7 +9,7 @@ use PrimeiraMao\Contracts\Credentials\Environment as EnvironmentContract;
  * PrimeiraMao API
  * 
  * @type        library
- * @version     0.0.2
+ * @version     0.0.3
  * @package     life-code/primeira-mao
  * @copyright   Copyright (c) 2018 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
@@ -35,16 +35,6 @@ class EnvironmentTest extends TestCase
     public function testInstance()
     {
         $this->assertInstanceOf(Environment::class, $this->instance());
-    }
-    
-    /**
-     * Test get env
-     *
-     * @return void
-     */
-    public function testGetEnv()
-    {
-        $this->assertEquals('SANDBOX', $this->instance()->getEnv());
     }
     
     /**

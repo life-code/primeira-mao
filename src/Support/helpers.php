@@ -4,7 +4,7 @@
  * PagSeguro SDK
  * 
  * @type        library
- * @version     0.0.2
+ * @version     0.0.3
  * @package     life-code/pagseguro-sdk
  * @copyright   Copyright (c) 2018 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>

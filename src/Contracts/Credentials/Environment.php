@@ -6,7 +6,7 @@ namespace PrimeiraMao\Contracts\Credentials;
  * PrimeiraMao API
  * 
  * @type        library
- * @version     0.0.2
+ * @version     0.0.3
  * @package     life-code/primeira-mao
  * @copyright   Copyright (c) 2018 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
@@ -14,13 +14,6 @@ namespace PrimeiraMao\Contracts\Credentials;
  */
 interface Environment
 {
-    /**
-     * Get environment
-     * 
-     * @return string
-     */
-    public function getEnv() : string;
-    
     /**
      * Get access key
      * 
