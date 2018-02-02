@@ -94,11 +94,7 @@ abstract class RequestBuilder implements RequestBuilderContract
         }
         
         if ($code === 422) {
-            if (isset($data['errors'])) {
-                return $data['errors'];
-            }
-            
-            return [422 => $data['message']];
+            return (isset($data['errors'])) ? $data['errors'] : [422 => $data['message']];
         }
         
         return false;
