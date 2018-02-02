@@ -3,6 +3,7 @@
 namespace PrimeiraMao\Http;
 
 use PrimeiraMao\Contracts\Http\RequestBuilder as RequestBuilderContract;
+use PrimeiraMao\Contracts\Http\Response as ResponseContract;
 use PrimeiraMao\Http\Response;
 use PrimeiraMao\PrimeiraMao;
 
@@ -59,7 +60,7 @@ abstract class RequestBuilder implements RequestBuilderContract
      * @param array $info
      * @return \PrimeiraMao\Contracts\Http\Response
      */
-    public function createResponse($data, array $info)
+    private function createResponse($data, array $info)
     {
         $data = json_decode($data, true);
         
@@ -68,18 +69,38 @@ abstract class RequestBuilder implements RequestBuilderContract
         $response->setStatus($info['http_code']);
         $response->setInfo($info);
         
-        if ($info['http_code'] === 404) {
-            return $response->setErrors([404 => $data['message']]);
-        }
-        
-        if ($info['http_code'] === 422) {
-            if (isset($data['errors'])) {
-                return $response->setErrors($data['errors']);
-            }
-            
-            return $response->setErrors([422 => $data['message']]);
+        if ($errors = $this->handleHttp($info['http_code'], $data)) {
+            return $response->setErrors($errors);
         }
         
         return $response->setData($data);
+    }
+    
+    /**
+     * Handler HTTP code
+     * 
+     * @param int $code
+     * @param array $data
+     * @return array | bool
+     */
+    private function handleHttp(int $code, array $data)
+    {
+        if ($code === 404) {
+            return [404 => 'Página não encontrada.'];
+        }
+        
+        if ($code === 500) {
+            return [500 => 'Erro interno.'];
+        }
+        
+        if ($code === 422) {
+            if (isset($data['errors'])) {
+                return $data['errors'];
+            }
+            
+            return [422 => $data['message']];
+        }
+        
+        return false;
     }
 }
