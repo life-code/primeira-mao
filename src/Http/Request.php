@@ -135,7 +135,7 @@ class Request extends RequestBuilder implements RequestContract
     /**
      * Set appends
      * 
-     * @param array $data
+     * @param array $appends
      * @return $this
      */
     public function appends(array $appends)
