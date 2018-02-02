@@ -15,11 +15,37 @@
 The Primeira Mão library contains several features that Primeira Mão offers in the form of APIs. With it you can integrate features like:
 
 - **Profile**
-  - Consulting profiles *(to do)*
-  - Create profile *(to do)*
-  - Update profile *(to do)*
-  - Delete profile *(to do)*
+  - Consulting profiles *(done)*
+  - Create profile *(done)*
+  - Update profile *(done)*
+  - Delete profile *(done)*
+  
+  - **ProfileAds**
+    - Consulting profile ads *(done)*
+    
+  - **ProfileFavorite**
+    - Consulting profile favorites *(done)*
+    - Create profile favorites *(done)*
+    - Delete profile favorites *(done)*
 
+- **Resale**
+  - Consulting profiles *(done)*
+  - Create profile *(done)*
+  - Update profile *(done)*
+  - Delete profile *(done)*
+  
+  - **ProfileAds**
+    - Consulting profile ads *(done)*
+    
+- **Ad**
+  - Consulting profiles *(done)*
+  - Create profile *(done)*
+  - Update profile *(done)*
+  - Delete profile *(done)*
+  
+  - **Uploader**
+    - Create file *(done)*
+    
 ...
 
 ## Issues
