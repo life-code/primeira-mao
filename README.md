@@ -38,15 +38,35 @@ The Primeira Mão library contains several features that Primeira Mão offers in
     - Consulting profile ads *(done)*
     
 - **Ad**
-  - Consulting profiles *(done)*
-  - Create profile *(done)*
-  - Update profile *(done)*
-  - Delete profile *(done)*
+  - Consulting ads *(done)*
+  - Create ad *(done)*
+  - Update ad *(done)*
+  - Delete ad *(done)*
   
   - **Uploader**
     - Create file *(done)*
     
-...
+- **Category**
+  - Consulting categories *(done)*
+  
+  - **Trademarks**
+    - Consulting trademarks *(done)*
+    
+  - **TrademarksModels**
+    - Consulting trademarks models *(done)*
+    
+  - **TrademarksModelsVersions**
+    - Consulting trademarks model versions *(done)*
+
+- **Newspaper**
+  - Consulting newspapers *(done)*
+  - Create newspaper *(done)*
+  - Update newspaper *(done)*
+  - Delete newspaper *(done)*
+
+- **Search 2.0**
+  - Consulting results *(done)*
+
 
 ## Issues
 Issues are used to track todos, bugs, feature requests, and more.
