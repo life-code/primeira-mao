@@ -63,6 +63,7 @@ abstract class RequestBuilder implements RequestBuilderContract
     private function createResponse($data, array $info)
     {
         $data = json_decode($data, true);
+        $data = ($data) ? $data : [];
         
         $response = new Response(PrimeiraMao::getEnv(), $this->path);
         
@@ -80,10 +81,10 @@ abstract class RequestBuilder implements RequestBuilderContract
      * Handler HTTP code
      * 
      * @param int $code
-     * @param array $data
+     * @param mixed $data
      * @return array | bool
      */
-    private function handleHttp(int $code, array $data)
+    private function handleHttp(int $code, $data)
     {
         if ($code === 404) {
             return [404 => 'Página não encontrada.'];
