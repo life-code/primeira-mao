@@ -73,7 +73,15 @@ class Language implements LanguageContract
             $this->translations = $this->getTranslations();
         }
         
-        return $this->translations[$code] ?? $default;
+        if (! isset($this->translations[$code]) || ! $translation = $this->translations[$code]) {
+            return $default;
+        }
+        
+        if (isset($translation[$default])) {
+            return $translation[$default];
+        }
+        
+        return is_array($translation) ? $default : $translation;
     }
     
     /**
