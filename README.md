@@ -68,13 +68,17 @@ The Primeira Mão library contains several features that Primeira Mão offers in
   - Consulting results *(done)*
 
 
+## Documentation
+[To access the documentation, click here](https://github.com/life-code/primeira-mao/tree/master/docs/README.md)
+
+
 ## Issues
 Issues are used to track todos, bugs, feature requests, and more.
 
 
 ## Contributing
-Contribute to the PagSeguro SDK and help bring this idea forward!
+Contribute to the Primeira Mão and help bring this idea forward!
 
 
 ## License
-The PagSeguro SDK is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The Primeira Mão is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
