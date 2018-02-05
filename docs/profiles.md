@@ -3,7 +3,6 @@
 [Return documentation](https://github.com/life-code/primeira-mao/blob/master/docs/README.md)
 
 ## Profiles documentation
-> Whenever you use PrimeiraMao checkout, you must create a session.
 
 ```sh
 <?php
