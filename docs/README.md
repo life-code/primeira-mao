@@ -33,10 +33,12 @@ PRIMEIRA_MAO_LOCATION=pt-br
 
 Ready, your Primeira Mão library is ready for use!
 
-
-
-Links:
-- [test](https://github.com/life-code/primeira-mao/blob/master/docs/test.md)
+- [Profiles](https://github.com/life-code/primeira-mao/tree/master/docs/profiles.md)
+- [Resales](https://github.com/life-code/primeira-mao/tree/master/docs/resales.md)
+- [Ads](https://github.com/life-code/primeira-mao/tree/master/docs/ads.md)
+- [Categories](https://github.com/life-code/primeira-mao/tree/master/docs/categories.md)
+- [Newspapers](https://github.com/life-code/primeira-mao/tree/master/docs/newspapers.md)
+- [Search 2.0](https://github.com/life-code/primeira-mao/tree/master/docs/search-2.0.md)
 
 
 ## Contribution Guidelines
