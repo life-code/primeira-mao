@@ -16,7 +16,7 @@ use PrimeiraMao\Categories\TrademarkModel;
 // ------- Categories -------
 $category = new Category();
 
-// Find one register for id
+// Find one register for category id
 $response = $category->find(1);
 
 // Find all registers
@@ -31,7 +31,7 @@ die();
 // Init class with category id
 $trademark = new Trademark(1);
 
-// Find one register for id
+// Find one register for trademark id
 $response = $trademark->find(1);
 
 // Find all registers
@@ -43,10 +43,10 @@ die();
 
 
 // ------- TrademarkModel -------
-// Init class with category id
-$trademark_model = new TrademarkModel(1);
+// Init class with category id and trademark id
+$trademark_model = new TrademarkModel(1, 1);
 
-// Find one register for id
+// Find versions registers for trademark model id
 $response = $trademark_model->find(1);
 
 // Find all registers
