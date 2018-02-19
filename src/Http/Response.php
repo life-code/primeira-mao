@@ -89,7 +89,7 @@ class Response implements ResponseContract
      */
     public function setData(array $data)
     {
-        $this->data = $data;
+        $this->data = (object) $data;
         
         return $this;
     }
