@@ -11,7 +11,7 @@ use PrimeiraMao\Languages\Language;
  * PrimeiraMao API
  * 
  * @type        library
- * @version     0.0.5
+ * @version     0.0.6
  * @package     life-code/primeira-mao
  * @copyright   Copyright (c) 2018 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
