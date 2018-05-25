@@ -102,4 +102,19 @@ class Profile
         
         return $request->send();
     }
+    
+    /**
+     * Check email
+     * 
+     * @param array $appends
+     * @return \PrimeiraMao\Contracts\Http\Response
+     */
+    public function checkEmail(array $appends = []) : Response
+    {
+        $url = $this->url . '/check_email.json';
+
+        $request = new Request(Request::GET, $url, $this->path);
+
+        return $request->appends($appends)->send();
+    }
 }
