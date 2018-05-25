@@ -8,7 +8,7 @@ use PrimeiraMao\Contracts\Credentials\AccountCredentials as AccountCredentialsCo
  * PrimeiraMao API
  * 
  * @type        library
- * @version     0.0.6
+ * @version     0.0.7
  * @package     life-code/primeira-mao
  * @copyright   Copyright (c) 2018 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>

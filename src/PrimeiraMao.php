@@ -10,7 +10,7 @@ use PrimeiraMao\Credentials\AccountCredentials;
  * Primeira Mao API
  * 
  * @type        library
- * @version     0.0.6
+ * @version     0.0.7
  * @package     life-code/primeira-mao
  * @copyright   Copyright (c) 2018 Vinicius Pugliesi (http://www.viniciuspugliesi.com)
  * @author      Vinicius Pugliesi <vinicius_pugliesi@outlook.com>
@@ -23,7 +23,7 @@ class PrimeiraMao implements PrimeiraMaoContract
      *
      * @var string
      */
-    const VERSION = '0.0.6';
+    const VERSION = '0.0.7';
     
     /**
      * @var \PrimeiraMao\Contracts\Credentials\Environment
